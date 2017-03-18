@@ -1,18 +1,8 @@
 defmodule TheChicken do
-  @moduledoc """
-  Documentation for TheChicken.
-  """
+  use Application
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> TheChicken.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def start(_type, _args) do
+    Slack.Bot.start_link(Bot, [], System.get_env("TOKEN_SLACK"))
+    HenhouseServer.start_link
   end
 end
