@@ -1,4 +1,5 @@
-FROM elixir
+FROM jesustinoco/elixir:1.4.1
+
 MAINTAINER https://github.com/JesusTinoco
 
 WORKDIR /the_chicken
